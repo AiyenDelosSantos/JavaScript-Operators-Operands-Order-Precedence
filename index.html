@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('dog-pattern.png');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, input, button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Calculator</h1>
+        <div>
+            <label for="subject1">Math Grade:</label>
+            <input type="number" id="subject1" min="0" max="100" required>
+        </div>
+        <div>
+            <label for="subject2">Science Grade:</label>
+            <input type="number" id="subject2" min="0" max="100" required>
+        </div>
+        <div>
+            <label for="subject3">History Grade:</label>
+            <input type="number" id="subject3" min="0" max="100" required>
+        </div>
+        <div>
+            <label for="subject4">English Grade:</label>
+            <input type="number" id="subject4" min="0" max="100" required>
+        </div>
+        <div>
+            <label for="subject5">Computer Grade:</label>
+            <input type="number" id="subject5" min="0" max="100" required>
+        </div>
+        <button onclick="calculateAverage()">Calculate Average</button>
+        <h2 id="averageGrade"></h2>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            var subject1 = parseFloat(document.getElementById('subject1').value);
+            var subject2 = parseFloat(document.getElementById('subject2').value);
+            var subject3 = parseFloat(document.getElementById('subject3').value);
+            var subject4 = parseFloat(document.getElementById('subject4').value);
+            var subject5 = parseFloat(document.getElementById('subject5').value);
+
+            var total = subject1 + subject2 + subject3 + subject4 + subject5;
+            var average = total / 5;
+
+            document.getElementById('averageGrade').innerText = "Average Grade: " + average.toFixed(2);
+        }
+    </script>
+</body>
+</html>
